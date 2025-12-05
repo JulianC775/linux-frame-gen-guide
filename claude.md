@@ -99,24 +99,49 @@ Provide game-specific recommendations:
 
 **ALWAYS** end the optimization session by displaying:
 
-1. **Steam Launch Options** (in a code block for easy copying):
+1. **COMPATIBILITY TOOL** (displayed prominently):
+   ```
+   ═══════════════════════════════════════════════
+   COMPATIBILITY TOOL: GE-Proton
+   VERSION: GE-Proton9-20
+   ═══════════════════════════════════════════════
+
+   How to set:
+   1. Right-click game → Properties → Compatibility
+   2. Check "Force the use of a specific Steam Play compatibility tool"
+   3. Select GE-Proton9-20 from dropdown
+   ```
+
+2. **Steam Launch Options** (in a code block for easy copying):
    ```
    PROTON_ENABLE_NVAPI=1 WINEDLLOVERRIDES="nvngx.dll=n,b;nvngx_dlss.dll=n,b" %command%
    ```
    (Include any additional flags like mangohud if requested)
 
-2. Brief reminder of next steps:
+3. Brief reminder of next steps:
    - Where to paste launch options (Steam > Game Properties > Launch Options)
-   - Need to enable DLSS/FSR in-game
-   - What to expect (FPS increase, first launch shader stutter)
+   - Need to enable DLSS/FSR in-game (if applicable)
+   - What to expect (FPS increase, first launch shader stutter, etc.)
 
-### Step 9: Save Configuration
+### Step 9: Save Launch Options
+
+Add the game's launch options to `launch-options.json`:
+- Use lowercase game name as key
+- **REQUIRED**: Include compatibility tool and version fields:
+  - `compatibility_tool`: "GE-Proton" (or other)
+  - `compatibility_version`: "GE-Proton9-20" (or specific version)
+  - `compatibility_required`: true/false
+- Include basic, with_mangohud, and with_logging variants
+- Mark which one is recommended
+- Add any relevant notes
+
+### Step 10: Save Configuration
 
 After successful setup, create a file in `game-configs/[game-name].md` with:
 - Game name and date
 - DLL location path
 - Working nvngx.ini configuration
-- Steam launch options used
+- Steam launch options used (reference launch-options.json)
 - In-game settings that work well
 - Any game-specific quirks or notes
 
@@ -193,7 +218,7 @@ Sharpness=0.6
 ## Key Resources
 
 - GE-Proton: https://github.com/GloriousEggroll/proton-ge-custom/releases
-- OptiScaler: https://github.com/cdozdil/OptiScaler
+- OptiScaler: https://github.com/optiscaler/OptiScaler
 - ProtonDB: https://www.protondb.com/
 
 ## Important Notes

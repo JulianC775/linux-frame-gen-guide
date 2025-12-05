@@ -7,6 +7,7 @@ Personal reference repository for optimizing games on Linux with FSR3 Frame Gene
 This repo contains:
 - **claude.md**: Guide for Claude to follow when helping optimize games
 - **game-configs/**: Saved configurations for individual games
+- **launch-options.json**: Standardized launch options for all games
 
 ## How to Use
 

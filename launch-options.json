@@ -1,0 +1,26 @@
+{
+  "satisfactory": {
+    "game_name": "Satisfactory",
+    "compatibility_tool": "GE-Proton",
+    "compatibility_version": "GE-Proton9-20",
+    "compatibility_required": true,
+    "basic": "PROTON_ENABLE_NVAPI=1 WINEDLLOVERRIDES=\"nvngx.dll=n,b;nvngx_dlss.dll=n,b\" %command%",
+    "with_mangohud": "PROTON_ENABLE_NVAPI=1 WINEDLLOVERRIDES=\"nvngx.dll=n,b;nvngx_dlss.dll=n,b\" mangohud %command%",
+    "with_logging": "PROTON_LOG=1 PROTON_ENABLE_NVAPI=1 WINEDLLOVERRIDES=\"nvngx.dll=n,b;nvngx_dlss.dll=n,b\" %command%",
+    "recommended": "basic",
+    "notes": "Enable DLSS in-game to activate FSR3 frame generation"
+  },
+  "repo": {
+    "game_name": "REPO",
+    "compatibility_tool": "GE-Proton",
+    "compatibility_version": "GE-Proton9-20",
+    "compatibility_required": true,
+    "basic": "gamemoderun %command%",
+    "with_mangohud": "gamemoderun mangohud %command%",
+    "performance": "DXVK_ASYNC=1 __GL_THREADED_OPTIMIZATION=1 gamemoderun %command%",
+    "performance_mangohud": "DXVK_ASYNC=1 __GL_THREADED_OPTIMIZATION=1 gamemoderun mangohud %command%",
+    "with_logging": "PROTON_LOG=1 gamemoderun %command%",
+    "recommended": "performance_mangohud",
+    "notes": "Unity game - no frame gen support. Uses GameMode for CPU optimization, DXVK_ASYNC for shader compilation, GL threaded optimization for NVIDIA"
+  }
+}
