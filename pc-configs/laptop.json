@@ -1,0 +1,39 @@
+{
+  "pc_name": "Laptop",
+  "is_active": true,
+  "hardware": {
+    "gpu": {
+      "model": "NVIDIA GeForce RTX 3070 Ti Laptop",
+      "vram_gb": 8,
+      "tier": "mid-range"
+    },
+    "cpu": {
+      "model": "Intel Core i7-12700H",
+      "cores": 14,
+      "threads": 20
+    },
+    "ram_gb": 16
+  },
+  "system": {
+    "distro": "Linux Mint 22.2",
+    "kernel": "6.14.0-37-generic",
+    "steam_path": "~/.steam/steam"
+  },
+  "tools_installed": {
+    "ge_proton": false,
+    "ge_proton_version": null,
+    "optiscaler": false,
+    "optiscaler_location": null,
+    "mangohud": false,
+    "gamemode": false,
+    "nvidia_drivers": false
+  },
+  "optimization_preferences": {
+    "default_output_scaling": "balanced",
+    "default_sharpness": 0.5,
+    "default_reactive_mask_bias": 0.45,
+    "prefer_mangohud": true,
+    "prefer_gamemode": true
+  },
+  "notes": "Fresh setup - NVIDIA drivers need to be installed first before any game optimizations"
+}

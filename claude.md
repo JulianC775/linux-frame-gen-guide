@@ -2,10 +2,17 @@
 
 This document guides how to help optimize games on Linux with FSR3 Frame Generation using OptiScaler and GE-Proton.
 
+## Before Starting
+
+**ALWAYS check the active PC configuration first:**
+1. Read `pc-configs/active-pc.json` (symlink to current PC)
+2. Note the GPU tier, installed tools, and optimization preferences
+3. Tailor recommendations based on the active PC's specs
+
 ## User's Setup
 
-- **OS**: Linux
-- **GPU**: NVIDIA
+- **OS**: Linux (multi-PC setup - check active config)
+- **GPU**: NVIDIA (model varies by PC - check active config)
 - **Tools**: Steam, GE-Proton, OptiScaler
 - **Goal**: Enable FSR3 Frame Generation for better performance
 
@@ -15,11 +22,15 @@ Follow this workflow when the user asks to optimize a game (e.g., "help me optim
 
 ### Step 1: Gather Information
 
-Ask the user for:
+First, check `pc-configs/active-pc.json` to see:
+- Which tools are already installed (`tools_installed` section)
+- GPU tier for preset recommendations (`hardware.gpu.tier`)
+- Optimization preferences (`optimization_preferences`)
+
+Then ask the user for:
 1. Game name
-2. Whether they already have GE-Proton installed
-3. Whether they already have OptiScaler downloaded
-4. Any specific issues they're experiencing (optional)
+2. Any specific issues they're experiencing (optional)
+3. If needed, confirm tool installation status (cross-check with PC config)
 
 ### Step 2: Locate Game Files
 
@@ -48,7 +59,14 @@ Guide the user to:
 
 ### Step 4: Create Configuration File
 
-Create `nvngx.ini` in the same directory as the DLLs with a sensible starting configuration:
+Create `nvngx.ini` in the same directory as the DLLs.
+
+**Use values from the active PC config's `optimization_preferences`:**
+- `OutputScaling` → use `default_output_scaling`
+- `Sharpness` → use `default_sharpness`
+- `DlssReactiveMaskBias` → use `default_reactive_mask_bias`
+
+Example configuration:
 
 ```ini
 [General]

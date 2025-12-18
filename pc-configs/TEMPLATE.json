@@ -1,0 +1,41 @@
+{
+  "_comment": "Template for PC configuration. Copy this file and rename it to your PC name (e.g., gaming-pc.json, laptop.json)",
+  "pc_name": "My Gaming PC",
+  "is_active": false,
+  "hardware": {
+    "gpu": {
+      "model": "NVIDIA RTX 4070",
+      "vram_gb": 12,
+      "tier": "mid-range",
+      "_tier_options": "budget | mid-range | high-end"
+    },
+    "cpu": {
+      "model": "AMD Ryzen 7 7800X3D",
+      "cores": 8,
+      "threads": 16
+    },
+    "ram_gb": 32
+  },
+  "system": {
+    "distro": "Ubuntu 24.04",
+    "kernel": "6.14.0-37-generic",
+    "steam_path": "~/.steam/steam"
+  },
+  "tools_installed": {
+    "ge_proton": true,
+    "ge_proton_version": "GE-Proton9-20",
+    "optiscaler": true,
+    "optiscaler_location": "~/Downloads/OptiScaler",
+    "mangohud": true,
+    "gamemode": true
+  },
+  "optimization_preferences": {
+    "default_output_scaling": "balanced",
+    "_scaling_options": "performance | balanced | quality",
+    "default_sharpness": 0.5,
+    "default_reactive_mask_bias": 0.45,
+    "prefer_mangohud": true,
+    "prefer_gamemode": true
+  },
+  "notes": "Add any PC-specific notes here (e.g., overclocking, cooling, known issues)"
+}
